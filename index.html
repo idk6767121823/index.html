@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black; color:lime; text-align:center; font-family:monospace; margin-top:100px;">
+
+<h1>🔒 SYSTEM LOCKED 🔒</h1>
+<p id="msg">Unauthorized access detected...</p>
+
+<input id="input" placeholder="Enter code">
+<button onclick="check()">Submit</button>
+
+<script>
+let code = 67;
+
+function check() {
+  let g = document.getElementById("input").value;
+  let m = document.getElementById("msg");
+
+  if (g === "exit") {
+    m.innerText = "Nice try... you can't exit 😈";
+    return;
+  }
+
+  if (isNaN(g)) {
+    m.innerText = "Numbers only 👀";
+    return;
+  }
+
+  g = Number(g);
+
+  if (g < code) m.innerText = "❌ Too low";
+  else if (g > code) m.innerText = "❌ Too high";
+  else m.innerText = "✅ ACCESS GRANTED... just kidding 😂";
+}
+</script>
+
+</body>
+</html>
